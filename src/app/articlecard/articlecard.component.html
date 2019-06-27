@@ -1,0 +1,7 @@
+<div *ngFor="let title of article; let i = index" class="card" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">{{article[i].title}}</h5>
+      <p class="card-text">{{article[i].content}}</p>
+      <a (click)="gotoarticle(i)" type="button" [routerLink]="['/News/Article']" class="btn btn-primary">View article</a>
+    </div>
+  </div>

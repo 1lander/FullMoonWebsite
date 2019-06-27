@@ -1,0 +1,6 @@
+
+<form #myForm="ngForm" (ngSubmit)="addpost()">
+      <textarea id="post-content" ngControl="post" [(ngModel)]="postobj.content" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      
+      <button type="submit" class="btn btn-dark">Submit</button>
+</form>

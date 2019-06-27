@@ -1,0 +1,3 @@
+<button (click)="passid(i)" *ngFor="let title of threads; let i = index" [routerLink]="['/Forum/Post']" type="button" class="btn btn-dark btn-lg btn-block" #myElement (click)="gettitle(myElement.innerText)">{{threads[i].title}}</button>
+
+<app-threadsubmit *ngIf="Service.Getloginstatus()"></app-threadsubmit>

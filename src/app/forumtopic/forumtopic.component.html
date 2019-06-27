@@ -1,0 +1,1 @@
+<button (click)="passid(i)" *ngFor="let title of topics; let i = index " [routerLink]="['/Forum/Postlist']" type="button" class="btn btn-dark btn-lg btn-block">{{topics[i].title}}</button>

@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <p class="navbar-brand" href="#" *ngIf="isLogged"> Welcome back, {{obj.Email}} </p>
+  
+  <!-- <button type="button" (click)="amILogged()" >PRESS ME</button> -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+    </ul>
+
+   
+
+    <form>
+      <ng-template #content let-modal id="myModal" >
+        
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Login</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+           <form #myForm="ngForm" (ngSubmit)="onCredSubmit()">
+              <div class="form-group">
+                   <label for="exampleInputEmail1">Email address</label>
+                   <input type="email" id="Log-email" ngControl="Email" [(ngModel)]="obj.Email" name="userthing" aria-describedby="emailHelp" placeholder="Enter email">
+                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                   <label for="exampleInputPassword1" >Password</label>
+                   <input type="password" id="Log-pass" ngControl="pass" [(ngModel)]="obj.pass" name="passname">
+               </div>
+         
+               <button type="submit" class="btn btn-primary">Submit</button>
+
+               {{isLogged}}
+               
+         </form>
+           
+        </div>
+      </ng-template>
+      
+      <button type='button' class="btn btn-primary my-2 my-sm-0" (click)="open(content)" *ngIf="isLogged == false">Login/Register</button>
+      <button type='button' class="btn btn-primary my-2 my-sm-0" (click)="LogOut()" *ngIf="isLogged">Sign out</button>
+      
+      
+      <hr>
+      
+    </form>
+
+  </div>
+</nav>
